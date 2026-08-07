@@ -74,6 +74,49 @@
     }
 
     /* ------------------------------------ */
+    /* GANESH JI TOP HEADER STYLING        */
+    /* ------------------------------------ */
+    .ganesha-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .ganesha-img {
+      width: 130px;
+      height: auto;
+      filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
+      animation: pulseGanesha 3s infinite ease-in-out;
+    }
+
+    @keyframes pulseGanesha {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.7)); }
+      50% { transform: scale(1.08); filter: drop-shadow(0 0 25px rgba(212, 175, 55, 1)); }
+    }
+
+    .shlok-text {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: #FFDF73;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-top: 8px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+      background: rgba(128, 0, 32, 0.7);
+      padding: 5px 20px;
+      border-radius: 20px;
+      border: 1px solid #D4AF37;
+      animation: glowBorder 2s infinite alternate;
+    }
+
+    @keyframes glowBorder {
+      0% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.4); }
+      100% { box-shadow: 0 0 18px rgba(212, 175, 55, 0.9); }
+    }
+
+    /* ------------------------------------ */
     /* ANIMATED CARD & ENVELOPE OVERLAY    */
     /* ------------------------------------ */
     #invitation-overlay {
@@ -94,10 +137,10 @@
 
     .tap-hint {
       font-family: 'Cinzel', serif;
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: #800020;
       letter-spacing: 3px;
-      margin-top: 30px;
+      margin-top: 40px;
       animation: floatText 2s infinite ease-in-out;
     }
     @keyframes floatText {
@@ -105,73 +148,76 @@
       50% { transform: translateY(-8px); opacity: 1; }
     }
 
+    /* LARGER ENVELOPE (420px x 280px) */
     .envelope-wrapper {
       position: relative;
-      width: 320px;
-      height: 220px;
+      width: 420px;
+      height: 280px;
       background: linear-gradient(135deg, #FFF0F3 0%, #FFE4E8 100%);
-      border-radius: 16px;
+      border-radius: 18px;
       border: 2px solid #D4AF37;
-      box-shadow: 0 15px 35px rgba(128, 0, 32, 0.15), 0 0 20px rgba(212, 175, 55, 0.2);
+      box-shadow: 0 20px 45px rgba(128, 0, 32, 0.2), 0 0 25px rgba(212, 175, 55, 0.25);
       cursor: pointer;
       transform-style: preserve-3d;
       transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    .envelope-wrapper:hover { transform: scale(1.05) rotateX(5deg); }
+    .envelope-wrapper:hover { transform: scale(1.04) rotateX(4deg); }
 
     .flap {
       position: absolute;
       top: 0; left: 0;
-      border-left: 160px solid transparent;
-      border-right: 160px solid transparent;
-      border-top: 125px solid #FAD6DF;
+      border-left: 210px solid transparent;
+      border-right: 210px solid transparent;
+      border-top: 160px solid #FAD6DF;
       transform-origin: top;
       transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 4;
-      filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
+      filter: drop-shadow(0 3px 6px rgba(212, 175, 55, 0.3));
     }
     .pocket {
       position: absolute;
       bottom: 0; left: 0;
-      border-left: 160px solid #F8C8D4;
-      border-right: 160px solid #F8C8D4;
-      border-bottom: 110px solid #F3B3C3;
-      border-radius: 0 0 14px 14px;
+      border-left: 210px solid #F8C8D4;
+      border-right: 210px solid #F8C8D4;
+      border-bottom: 140px solid #F3B3C3;
+      border-radius: 0 0 16px 16px;
       z-index: 3;
     }
     
+    /* LARGER CARD INSIDE (380px x 240px) */
     .card-inside {
       position: absolute;
-      bottom: 10px; left: 15px;
-      width: 290px; height: 190px;
+      bottom: 15px; left: 20px;
+      width: 380px; height: 240px;
       background: #FFFFFF;
       border: 2px solid #D4AF37;
-      border-radius: 12px;
-      padding: 15px;
+      border-radius: 14px;
+      padding: 20px;
       text-align: center;
       z-index: 2;
       transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.8s ease;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
     }
     .card-inside h2 {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.4rem;
+      font-size: 3.2rem;
       color: #800020;
-      margin: 2px 0;
+      margin: 4px 0;
     }
 
     .wax-seal {
       position: absolute;
-      top: 100px; left: 50%;
+      top: 130px; left: 50%;
       transform: translate(-50%, -50%);
-      width: 70px; height: 70px;
+      width: 80px; height: 80px;
       background: radial-gradient(circle, #FFE484, #D4AF37, #AA820A);
       border-radius: 50%;
       display: flex; justify-content: center; align-items: center;
-      box-shadow: 0 6px 15px rgba(128, 0, 32, 0.25);
-      z-index: 5;
+      box-shadow: 0 8px 20px rgba(128, 0, 32, 0.3);
+      z-index: 6;
       font-family: 'Cinzel', serif;
-      font-size: 0.65rem; font-weight: bold; color: #4A2E35; border: 2px solid #FFF;
+      font-size: 0.75rem; font-weight: bold; color: #4A2E35; border: 2px solid #FFF;
       animation: pulseGlow 1.8s infinite alternate;
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
@@ -180,13 +226,18 @@
       to { box-shadow: 0 0 25px rgba(212, 175, 55, 0.9); transform: translate(-50%, -50%) scale(1.06); }
     }
 
+    /* Fixed Envelope Open State with Increased Elevation */
     .envelope-wrapper.open .flap { transform: rotateX(180deg); z-index: 1; }
     .envelope-wrapper.open .wax-seal { opacity: 0; transform: translate(-50%, -50%) scale(0.5); pointer-events: none; }
-    .envelope-wrapper.open .card-inside { transform: translateY(-130px) scale(1.15); z-index: 5; box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4); }
+    .envelope-wrapper.open .card-inside { 
+      transform: translateY(-210px) scale(1.25); 
+      z-index: 10; 
+      box-shadow: 0 25px 50px rgba(128, 0, 32, 0.35); 
+    }
     #invitation-overlay.zoom-out { opacity: 0; transform: scale(2.2); visibility: hidden; }
 
     /* ------------------------------------ */
-    /* MAIN WEBSITE STYLES                 */
+    /* MAIN WEBSITE STYLES                  */
     /* ------------------------------------ */
     .fade-in {
       opacity: 0;
@@ -207,7 +258,7 @@
       min-height: 100vh;
       background: linear-gradient(rgba(255, 240, 243, 0.3), rgba(74, 46, 53, 0.5)), 
                   url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
-      display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 20px 20px 20px;
     }
 
     .hero-subtitle {
@@ -231,6 +282,11 @@
       text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
       margin: 10px 0;
       line-height: 1;
+      animation: floatTitle 4s infinite ease-in-out;
+    }
+    @keyframes floatTitle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     .hero .ampersand {
@@ -256,7 +312,9 @@
       color: #5C3D46;
       text-transform: uppercase;
       letter-spacing: 1px;
+      transition: transform 0.3s ease;
     }
+    .timer-box:hover { transform: translateY(-5px) scale(1.05); }
     .timer-box span {
       display: block;
       font-size: 2.8rem;
@@ -265,22 +323,67 @@
       margin-bottom: 5px;
     }
 
-    /* Timeline Section */
+    /* OUR STORY SECTION BACKGROUND */
+    .story-section {
+      background-image: linear-gradient(rgba(255, 240, 243, 0.88), rgba(255, 240, 243, 0.88)), 
+                        url('ganesha.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border-radius: 20px;
+    }
+
+    /* Our Story Timeline */
     .timeline { position: relative; margin: 40px 0; }
     .timeline::before {
       content: ''; position: absolute; top: 0; bottom: 0; left: 50%;
       width: 2px; background: linear-gradient(to bottom, #D4AF37, #FFB6C1, #D4AF37);
       transform: translateX(-50%);
     }
-    .timeline-item { margin: 30px 0; position: relative; width: 50%; padding: 0 30px; }
+    .timeline-item { margin: 40px 0; position: relative; width: 50%; padding: 0 30px; }
     .timeline-item.left { left: 0; text-align: right; }
     .timeline-item.right { left: 50%; text-align: left; }
-    .timeline-content {
-      background: #FFF; padding: 25px; border-radius: 12px;
-      border: 1px solid #F3C5C5; box-shadow: 0 5px 15px rgba(212, 175, 55, 0.12);
+
+    .story-card {
+      position: relative;
+      border-radius: 16px;
+      border: 2px solid #D4AF37;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(128, 0, 32, 0.15);
+      color: #FFFFFF;
+      padding: 30px 25px;
+      background: linear-gradient(135deg, rgba(74, 46, 53, 0.92), rgba(128, 0, 32, 0.88));
+      transition: transform 0.3s ease;
+    }
+    .story-card:hover { transform: translateY(-5px); }
+
+    .story-card h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color: #FFDF73;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      margin-bottom: 5px;
     }
 
-    /* Interactive Scratch Card */
+    .story-card .story-date {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: #FFB6C1;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .story-card p.story-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+      color: #FFF;
+    }
+
+    /* Scratch Card */
     .scratch-wrap {
       position: relative;
       display: inline-block;
@@ -320,18 +423,21 @@
 
     /* Events Grid */
     .events-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 320px)); gap: 30px; justify-content: center;
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
+      gap: 25px; 
+      justify-content: center;
     }
     .event-card {
-      background: #FFF; width: 100%; aspect-ratio: 1 / 1.41;
-      padding: 30px 25px; border-radius: 20px; border: 2px solid #D4AF37;
+      background: #FFF; width: 100%;
+      padding: 25px 20px; border-radius: 20px; border: 2px solid #D4AF37;
       box-shadow: 0 10px 25px rgba(128, 0, 32, 0.08);
       display: flex; flex-direction: column; justify-content: space-between; align-items: center; position: relative;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    .event-card:hover { transform: translateY(-8px); }
-    .event-card h3 { font-size: 1.6rem; margin-top: 15px; color: #800020; }
-    .event-card p.description { font-size: 0.9rem; color: #5C3D46; }
+    .event-card:hover { transform: translateY(-10px) scale(1.02); }
+    .event-card h3 { font-size: 1.5rem; margin-top: 10px; color: #800020; }
+    .event-card p.description { font-size: 0.88rem; color: #5C3D46; margin: 10px 0; }
 
     .btn {
       display: inline-block;
@@ -347,7 +453,7 @@
       transition: all 0.3s ease;
       z-index: 2;
     }
-    .btn:hover { background: #800020; color: #FFF; }
+    .btn:hover { background: #800020; color: #FFF; transform: translateY(-2px); }
 
     /* Gallery Grid */
     .gallery-grid {
@@ -360,18 +466,17 @@
       border-radius: 12px;
       height: 220px;
       border: 2px solid #D4AF37;
+      position: relative;
     }
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s ease;
     }
-    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-item:hover img { transform: scale(1.15) rotate(1deg); }
 
-    /* ------------------------------------ */
-    /* PHYSICAL INVITATION CARD DESIGN      */
-    /* ------------------------------------ */
+    /* PHYSICAL INVITATION CARD DESIGN */
     .physical-card {
       background: #FFFDF9;
       border: 12px solid #FFFFFF;
@@ -423,7 +528,9 @@
       padding-top: 20px;
     }
 
-    /* INVITATION CARD WITH 9 NAMES SECTION */
+    /* ------------------------------------ */
+    /* THREE-BOX FAMILY INVITATION SECTION  */
+    /* ------------------------------------ */
     .invitation-card-container {
       background: #FFFFFF;
       background-image: radial-gradient(circle at center, #FFFDF5 0%, #FFF0F3 100%);
@@ -431,55 +538,146 @@
       border-radius: 20px;
       padding: 45px 30px;
       box-shadow: 0 15px 35px rgba(128, 0, 32, 0.12);
-      max-width: 800px;
+      max-width: 1050px;
       margin: 0 auto;
       position: relative;
     }
 
     .invitation-card-container h3 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
+      font-size: 3.2rem;
       color: #800020;
       margin-bottom: 10px;
+      animation: pulseTitle 3s infinite alternate;
+    }
+
+    @keyframes pulseTitle {
+      0% { text-shadow: 0 0 0px rgba(128,0,32,0); }
+      100% { text-shadow: 0 2px 10px rgba(212,175,55,0.4); }
     }
 
     .invitation-card-container p.invite-text {
       font-size: 1rem;
       color: #5C3D46;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       letter-spacing: 1px;
     }
 
-    .family-grid {
+    /* THREE MAIN FAMILY BOXES CONTAINER (2-Column Grid + Centered Row Below) */
+    .three-family-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 25px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 20px;
+      align-items: start;
     }
 
-    .family-card {
-      background: #FFF;
-      border: 1px solid #F3C5C5;
-      border-top: 3px solid #D4AF37;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-      transition: transform 0.3s ease;
+    /* Forces the 3rd Box to be below and centered across both columns */
+    .family-main-box.centered-box {
+      grid-column: 1 / -1;
+      max-width: 650px;
+      margin: 0 auto;
+      width: 100%;
     }
-    .family-card:hover { transform: translateY(-4px); }
-    .family-card .role {
-      font-size: 0.75rem;
-      font-weight: bold;
+
+    .family-main-box {
+      background: linear-gradient(145deg, #FFFFFF, #FFFBF0);
+      border: 2px solid #D4AF37;
+      border-radius: 18px;
+      padding: 25px 20px;
+      box-shadow: 0 10px 25px rgba(128, 0, 32, 0.08);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: borderShimmer 4s infinite alternate;
+    }
+
+    @keyframes borderShimmer {
+      0% { border-color: #D4AF37; }
+      50% { border-color: #FFB6C1; }
+      100% { border-color: #D4AF37; }
+    }
+
+    .family-main-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 35px rgba(128, 0, 32, 0.18);
+    }
+
+    /* Animated Shimmer Line across main boxes */
+    .family-main-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.6) 50%, transparent 55%);
+      transform: rotate(30deg);
+      animation: shimmerSweep 6s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shimmerSweep {
+      0% { transform: translateX(-100%) rotate(30deg); }
+      20%, 100% { transform: translateX(100%) rotate(30deg); }
+    }
+
+    .family-box-header {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      color: #800020;
+      font-weight: 700;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      border-bottom: 2px dashed #D4AF37;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .sub-box-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .family-sub-box {
+      background: #FFFFFF;
+      border: 1px solid #F3C5C5;
+      border-left: 4px solid #D4AF37;
+      border-radius: 10px;
+      padding: 12px 16px;
+      text-align: left;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .family-sub-box:hover {
+      transform: translateX(6px);
+      border-left-color: #800020;
+      box-shadow: 0 6px 15px rgba(128, 0, 32, 0.12);
+      background: #FFFDF9;
+    }
+
+    .family-sub-box .role {
+      font-size: 0.7rem;
+      font-weight: 700;
       color: #D4AF37;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 5px;
+      margin-bottom: 2px;
     }
-    .family-card .name {
+
+    .family-sub-box .name {
       font-family: 'Cinzel', serif;
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       font-weight: 600;
       color: #800020;
+      line-height: 1.3;
     }
 
     /* RSVP Form */
@@ -509,7 +707,7 @@
       cursor: pointer;
       border: none;
       font-size: 1rem;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, background 0.3s ease;
     }
     .rsvp-form button:hover {
       transform: scale(1.02);
@@ -524,16 +722,42 @@
       border-top: 2px solid #D4AF37;
     }
 
+    .admin-download-btn {
+      margin-top: 15px;
+      background: transparent;
+      border: 1px dashed #D4AF37;
+      color: #FFDF73;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .admin-download-btn:hover { background: rgba(212, 175, 55, 0.2); }
+
+    /* MOBILE & TABLET RESPONSIVENESS */
     @media (max-width: 768px) {
+      .envelope-wrapper { width: 310px; height: 210px; }
+      .flap { border-left-width: 155px; border-right-width: 155px; border-top-width: 120px; }
+      .pocket { border-left-width: 155px; border-right-width: 155px; border-bottom-width: 105px; }
+      .card-inside { width: 280px; height: 180px; bottom: 10px; left: 15px; }
+      .card-inside h2 { font-size: 2.2rem; }
+      .wax-seal { width: 65px; height: 65px; font-size: 0.6rem; top: 95px; }
+      .envelope-wrapper.open .card-inside { transform: translateY(-150px) scale(1.15); }
+
       .hero h1 { font-size: 4.8rem; }
       .hero .ampersand { font-size: 3rem; margin: -10px 0; }
       .hero-subtitle { font-size: 1rem; padding: 8px 18px; }
+      .ganesha-img { width: 100px; }
+      .shlok-text { font-size: 0.75rem; }
       .timer-box { min-width: 85px; padding: 15px; font-size: 0.9rem; }
       .timer-box span { font-size: 2.2rem; }
       .big-reveal .scratch-underneath { font-size: 1.5rem; padding: 20px 30px; }
       .timeline::before { left: 20px; }
       .timeline-item { width: 100%; padding-left: 50px; text-align: left !important; }
       .timeline-item.right { left: 0; }
+      .three-family-container { grid-template-columns: 1fr; }
+      .family-main-box.centered-box { grid-column: auto; }
     }
   </style>
 </head>
@@ -549,8 +773,9 @@
       <div class="pocket"></div>
       <div class="wax-seal">TAP TO<br>OPEN</div>
       <div class="card-inside">
-        <p style="font-size: 0.75rem; letter-spacing: 3px; color: #D4AF37; font-weight: 600;">YOU ARE INVITED</p>
+        <p style="font-size: 0.85rem; letter-spacing: 3px; color: #D4AF37; font-weight: 700;">YOU ARE INVITED</p>
         <h2>Utsav &amp; Deepshri</h2>
+        <p style="font-size: 0.8rem; color: #5C3D46; margin-top: 5px;">Click to Reveal Invitation</p>
       </div>
     </div>
     <div class="tap-hint">✨ Click the card to unseal your invitation ✨</div>
@@ -560,6 +785,13 @@
 
   <!-- Hero Section -->
   <header class="hero">
+    
+    <!-- LORD GANESHA HEADER -->
+    <div class="ganesha-header fade-in">
+      <img src="ganesha.png" alt="Lord Ganesha" class="ganesha-img">
+      <div class="shlok-text">ॐ श्री गणेशाय नमः ॐ</div>
+    </div>
+
     <p class="hero-subtitle fade-in">TOGETHER WITH THEIR FAMILIES</p>
     <h1 class="fade-in">Utsav <span class="ampersand">&amp;</span> Deepshri</h1>
     <p class="hero-subtitle fade-in" style="border-color: #FFF; color: #FFDF73;">INVITE YOU TO CELEBRATE THEIR WEDDING</p>
@@ -573,24 +805,28 @@
   </header>
 
   <!-- Section 1: Our Story -->
-  <section>
+  <section class="story-section">
     <h2 class="section-title fade-in">Our Story</h2>
     <div class="divider fade-in">🌺 🌺 🌺</div>
     <div class="timeline">
+      
+      <!-- First Meeting -->
       <div class="timeline-item left fade-in">
-        <div class="timeline-content">
+        <div class="story-card">
           <h3>The First Meeting</h3>
-          <p style="color: #D4AF37; font-size: 0.85rem; font-weight: bold; margin-bottom: 8px;">JANUARY 2025</p>
-          <p>It started with a simple hello and quickly blossomed into an inseparable bond full of love and laughter.</p>
+          <div class="story-date">✨ MAY 2026 ✨</div>
+          <p class="story-desc">It started with a simple hello and quickly blossomed into an inseparable bond full of love, deep conversations, and joyful laughter.</p>
         </div>
       </div>
+
+      <!-- Forever Begins -->
       <div class="timeline-item right fade-in">
-        <div class="timeline-content">
+        <div class="story-card">
           <h3>Forever Begins</h3>
-          <p style="color: #D4AF37; font-size: 0.85rem; font-weight: bold; margin-bottom: 8px;">DECEMBER 2025</p>
-          <p>Surrounded by warmth and joy, Utsav &amp; Deepshri decided on forever.</p>
+          <p class="story-desc">Surrounded by warmth, blessings, and sweet memories, Utsav &amp; Deepshri made the promise of a lifetime together.</p>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -602,7 +838,7 @@
     
     <div class="fade-in">
       <div class="scratch-wrap big-reveal">
-        <div class="scratch-underneath">15th November 2026</div>
+        <div class="scratch-underneath">30th November 2026</div>
         <canvas class="scratch-canvas"></canvas>
       </div>
     </div>
@@ -614,44 +850,59 @@
     <div class="divider fade-in">🌸 🌸 🌸</div>
     
     <div class="events-grid">
-      <!-- Haldi Event -->
+
+      <!-- 1. Haldi & Kalash -->
       <div class="event-card fade-in">
         <div>
-          <h3>Haldi &amp; Mehendi</h3>
+          <h3>Haldi &amp; Kalash</h3>
           <div class="scratch-wrap">
-             <div class="scratch-underneath" style="font-size: 0.95rem; padding: 10px 15px;">Nov 13, 2026 | 10:00 AM</div>
+             <div class="scratch-underneath" style="font-size: 0.95rem; padding: 10px 15px;">Nov 28, 2026 | 10:00 AM</div>
              <canvas class="scratch-canvas"></canvas>
           </div>
         </div>
-        <p class="description">A vibrant morning filled with yellow turmeric, floral fragrance, and delicate henna art.</p>
+        <p class="description">A vibrant morning filled with yellow turmeric, sacred rituals, and joyful blessing traditions.</p>
         <a href="https://maps.google.com" target="_blank" class="btn">View Venue Map</a>
       </div>
 
-      <!-- Sangeet Event -->
+      <!-- 2. Mehandi -->
       <div class="event-card fade-in">
         <div>
-          <h3>Sangeet Night</h3>
+          <h3>Mehandi</h3>
           <div class="scratch-wrap">
-             <div class="scratch-underneath" style="font-size: 0.95rem; padding: 10px 15px;">Nov 14, 2026 | 7:00 PM</div>
+             <div class="scratch-underneath" style="font-size: 0.95rem; padding: 10px 15px;">Nov 29, 2026 | 11:00 AM</div>
              <canvas class="scratch-canvas"></canvas>
           </div>
         </div>
-        <p class="description">An evening of celebration, music, and dance as both families come together on the dance floor.</p>
+        <p class="description">An afternoon of intricate henna designs, fragrant blooms, and festive music celebrations.</p>
         <a href="https://maps.google.com" target="_blank" class="btn">View Venue Map</a>
       </div>
 
-      <!-- Shaadi Event -->
+      <!-- 3. Sangeet -->
+      <div class="event-card fade-in">
+        <div>
+          <h3>Sangeet</h3>
+          <div class="scratch-wrap">
+             <div class="scratch-underneath" style="font-size: 0.95rem; padding: 10px 15px;">Nov 29, 2026 | 7:00 PM</div>
+             <canvas class="scratch-canvas"></canvas>
+          </div>
+        </div>
+        <p class="description">An electrifying night of music, performances, and energetic dancing with family and friends.</p>
+        <a href="https://maps.google.com" target="_blank" class="btn">View Venue Map</a>
+      </div>
+
+      <!-- 4. The Wedding -->
       <div class="event-card fade-in">
         <div>
           <h3>The Wedding</h3>
           <div class="scratch-wrap">
-             <div class="scratch-underneath" style="font-size: 0.95rem; padding: 10px 15px;">Nov 15, 2026 | 8:00 PM</div>
+             <div class="scratch-underneath" style="font-size: 0.95rem; padding: 10px 15px;">Nov 30, 2026 | 7:00 PM</div>
              <canvas class="scratch-canvas"></canvas>
           </div>
         </div>
         <p class="description">Join us as Utsav and Deepshri tie the knot and take their sacred wedding vows.</p>
         <a href="https://maps.google.com" target="_blank" class="btn">View Venue Map</a>
       </div>
+
     </div>
   </section>
 
@@ -675,7 +926,7 @@
     </div>
   </section>
 
-  <!-- Section 5: Physical Invitation Card & Warm Invitation (9 Family Names) -->
+  <!-- Section 5: Physical Invitation Card & Warm Invitation -->
   <section>
     <h2 class="section-title fade-in">Royal Invitation</h2>
     <div class="divider fade-in">💌 💌 💌</div>
@@ -686,65 +937,109 @@
       <div class="card-couples">Utsav &amp; Deepshri</div>
       <div class="card-details">
         <p>Together with their families, joyfully invite you to join them in celebrating their wedding union.</p>
-        <p style="margin-top: 15px; font-weight: 600; color: #800020;">SUNDAY, 15TH NOVEMBER 2026</p>
-        <p>Grand Palace Hotel &amp; Resort, New Delhi</p>
+        <p style="margin-top: 15px; font-weight: 600; color: #800020;">MONDAY, 30TH NOVEMBER 2026</p>
+        <p>Grand Palace Hotel &amp; Resort, Ranchi</p>
       </div>
       <div class="card-footer">
-        <div><strong>RSVP:</strong> Sharma &amp; Verma Family</div>
+        <div><strong>RSVP:</strong> Family &amp; Friends</div>
         <div style="font-size: 1.5rem; color: #D4AF37;">🔱</div>
         <div><strong>Dress Code:</strong> Festive Traditional</div>
       </div>
     </div>
 
-    <!-- WARM INVITATION WITH 9 NAMES -->
+    <!-- WARM INVITATION WITH FAMILY NAMES -->
     <div class="invitation-card-container fade-in">
       <h3>With Blessings &amp; Joy</h3>
       <p class="invite-text">
         We cordially invite you and your family to grace the wedding ceremony of our beloved children. Your presence and warm blessings will make our union truly memorable.
       </p>
 
-      <div class="family-grid">
-        <div class="family-card">
-          <div class="role">Grandfather</div>
-          <div class="name">Shri Ramesh Sharma</div>
+      <!-- THREE-BOX CONTAINER -->
+      <div class="three-family-container">
+        
+        <!-- BOX 1: GROOM'S FAMILY -->
+        <div class="family-main-box">
+          <div class="family-box-header">
+            <span>👑 Groom's Family</span>
+          </div>
+          <div class="sub-box-grid">
+            <div class="family-sub-box">
+              <div class="role">Groom's Father</div>
+              <div class="name">Shri Jitendra Prasad Soni</div>
+            </div>
+            <div class="family-sub-box">
+              <div class="role">Groom's Mother</div>
+              <div class="name">Smt. Prachi Soni</div>
+            </div>
+          </div>
         </div>
-        <div class="family-card">
-          <div class="role">Grandmother</div>
-          <div class="name">Smt. Savitri Sharma</div>
+
+        <!-- BOX 2: BRIDE'S PARENTS -->
+        <div class="family-main-box">
+          <div class="family-box-header">
+            <span>✨ Bride's Family</span>
+          </div>
+          <div class="sub-box-grid">
+            <div class="family-sub-box">
+              <div class="role">Bride's Father</div>
+              <div class="name">Shri Brijnandan Prasad</div>
+            </div>
+            <div class="family-sub-box">
+              <div class="role">Bride's Mother</div>
+              <div class="name">Smt. Dolly Devi</div>
+            </div>
+          </div>
         </div>
-        <div class="family-card">
-          <div class="role">Father of the Groom</div>
-          <div class="name">Shri Rajesh Sharma</div>
+
+        <!-- BOX 3: BRIDE'S EXTENDED FAMILY & BROTHERS (Centered Below) -->
+        <div class="family-main-box centered-box">
+          <div class="family-box-header">
+            <span>🌺 Bride's Family</span>
+          </div>
+          <div class="sub-box-grid">
+            <div class="family-sub-box">
+              <div class="role">Bade Papa Ji</div>
+              <div class="name">Shri Purushottam Prasad</div>
+            </div>
+            <div class="family-sub-box">
+              <div class="role">Uncle Ji</div>
+              <div class="name">Shri Sanjay Prasad</div>
+            </div>
+            
+            <!-- 6 SUB-BOXES FOR ELDER BROTHERS -->
+            <div class="family-sub-box">
+              <div class="role">Elder Brother</div>
+              <div class="name">Randhir Prasad</div>
+            </div>
+            <div class="family-sub-box">
+              <div class="role">Elder Brother</div>
+              <div class="name">Rahul Prasad</div>
+            </div>
+            <div class="family-sub-box">
+              <div class="role">Elder Brother</div>
+              <div class="name">Rohit Kumar</div>
+            </div>
+            <div class="family-sub-box">
+              <div class="role">Elder Brother</div>
+              <div class="name">Kunal Kumar</div>
+            </div>
+            <div class="family-sub-box">
+              <div class="role">Younger Brother</div>
+              <div class="name">Shubham Kumar</div>
+            </div>
+            <div class="family-sub-box">
+              <div class="role">Younger Brother</div>
+              <div class="name">Mehul Kumar </div>
+            </div>
+
+          </div>
         </div>
-        <div class="family-card">
-          <div class="role">Mother of the Groom</div>
-          <div class="name">Smt. Sunita Sharma</div>
-        </div>
-        <div class="family-card">
-          <div class="role">Father of the Bride</div>
-          <div class="name">Shri Anil Verma</div>
-        </div>
-        <div class="family-card">
-          <div class="role">Mother of the Bride</div>
-          <div class="name">Smt. Anita Verma</div>
-        </div>
-        <div class="family-card">
-          <div class="role">Uncle</div>
-          <div class="name">Shri Suresh Sharma</div>
-        </div>
-        <div class="family-card">
-          <div class="role">Aunt</div>
-          <div class="name">Smt. Rekha Sharma</div>
-        </div>
-        <div class="family-card">
-          <div class="role">Elder Brother</div>
-          <div class="name">Amit Sharma</div>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Section 6: RSVP Form (Saves to Excel) -->
+  <!-- Section 6: RSVP Form -->
   <section>
     <h2 class="section-title fade-in">RSVP</h2>
     <div class="divider fade-in">💐 💐 💐</div>
@@ -757,20 +1052,19 @@
           <option value="Joyfully Accept">Joyfully Accept</option>
           <option value="Regretfully Decline">Regretfully Decline</option>
         </select>
-        <button type="submit">Confirm RSVP &amp; Export Excel</button>
+        <button type="submit">Submit RSVP</button>
       </form>
     </div>
   </section>
 
   <footer>
     <p>With love &amp; blessings from Utsav &amp; Deepshri ❤️</p>
+    <p style="margin-top: 6px; font-size: 0.85rem; color: #FFDF73;">Contact: <a href="mailto:kmehul117@gmail.com" style="color: #FFDF73; text-decoration: underline;">kmehul117@gmail.com</a></p>
+    <button class="admin-download-btn" onclick="exportMasterExcel()">📥 Admin: Download Master RSVP List</button>
   </footer>
 
   <script>
-    // Global guest storage array
-    let rsvpGuestList = [];
-
-    // RSVP Submission & Export to Excel Sheet Function
+    // RSVP Submission & Storage Logic
     function handleRSVPSubmit(event) {
       event.preventDefault();
 
@@ -779,38 +1073,49 @@
       const attendance = document.getElementById('guestAttendance').value;
       const dateSubmitted = new Date().toLocaleString();
 
-      // Push guest data to list
-      rsvpGuestList.push({
+      let currentRSVPs = JSON.parse(localStorage.getItem('weddingRSVPList')) || [];
+
+      currentRSVPs.push({
         "Full Name": name,
         "Number of Guests": count,
         "Status": attendance,
         "Submission Date": dateSubmitted
       });
 
-      // Export updated array into Excel Workbook
-      const worksheet = XLSX.utils.json_to_sheet(rsvpGuestList);
-      const workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, worksheet, "Guests RSVP");
+      localStorage.setItem('weddingRSVPList', JSON.stringify(currentRSVPs));
 
-      // Save file as Excel
-      XLSX.writeFile(workbook, "Wedding_RSVP_List.xlsx");
-
-      alert(`Thank you, ${name}! Your RSVP response has been saved and exported to Excel.`);
+      alert(`Thank you, ${name}! Your RSVP response has been received.`);
       document.getElementById('rsvpForm').reset();
     }
 
-    // 1. Envelope Animation Logic
+    // Admin Function to download Master Excel Sheet
+    function exportMasterExcel() {
+      let currentRSVPs = JSON.parse(localStorage.getItem('weddingRSVPList')) || [];
+
+      if (currentRSVPs.length === 0) {
+        alert("No RSVPs have been submitted on this device yet!");
+        return;
+      }
+
+      const worksheet = XLSX.utils.json_to_sheet(currentRSVPs);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Guests RSVP");
+
+      XLSX.writeFile(workbook, "Master_Wedding_RSVP_List.xlsx");
+    }
+
+    // Envelope Animation
     function openEnvelope() {
       const envelope = document.getElementById('envelope');
       const overlay = document.getElementById('invitation-overlay');
       envelope.classList.add('open');
-      setTimeout(() => overlay.classList.add('zoom-out'), 1300);
+      setTimeout(() => overlay.classList.add('zoom-out'), 1600);
       
-      setTimeout(initScratchCards, 1500);
+      setTimeout(initScratchCards, 1800);
     }
 
-    // 2. Countdown Timer
-    const weddingDate = new Date("Nov 15, 2026 20:00:00").getTime();
+    // Countdown Timer (Matched to Nov 30, 2026)
+    const weddingDate = new Date("Nov 30, 2026 19:00:00").getTime();
     setInterval(function() {
       const now = new Date().getTime();
       const distance = weddingDate - now;
@@ -822,13 +1127,13 @@
       }
     }, 1000);
 
-    // 3. Scroll Fade Animations
+    // Scroll Fade Animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.15 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // 4. Floating Petals Background
+    // Floating Petals
     const petalContainer = document.getElementById('petals-container');
     for (let i = 0; i < 28; i++) {
       const petal = document.createElement('div');
@@ -841,7 +1146,7 @@
       petalContainer.appendChild(petal);
     }
 
-    // 5. Flower Blast Particle Animation Canvas Setup
+    // Flower Blast Canvas Setup
     const burstCanvas = document.getElementById('burst-canvas');
     const burstCtx = burstCanvas.getContext('2d');
     let particles = [];
@@ -908,7 +1213,7 @@
     }
     animateBurst();
 
-    // 6. Scratch Card Logic with Flower Blast
+    // Scratch Card Logic
     function initScratchCards() {
       const wraps = document.querySelectorAll('.scratch-wrap');
       wraps.forEach(wrap => {
